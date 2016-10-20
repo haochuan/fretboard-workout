@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Paper from 'material-ui/Paper';
 
 const style = {
-  width: 200,
+  width: '80%',
   margin: 20,
   textAlign: 'center',
   display: 'inline-block',
