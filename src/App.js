@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import Timer from './components/Timer';
 import Chord from './components/Chord';
 import Controller from './components/Controller';
 
@@ -26,6 +26,7 @@ class App extends Component {
 
   scheduler() {
     const {currentTime, duration} = this.state;
+    // console.log("current time: ", currentTime);
     if (currentTime === duration - 1) {
       const lastChord = this.state.lastChord;
       const chordLibrary = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
@@ -39,15 +40,15 @@ class App extends Component {
       this.setState({currentTime: currentTime + 1});
     }
 
-    setTimeout(this.scheduler, 1000);
+    // setTimeout(this.scheduler, 1000);
   }
 
   toggle() {
     if (this.state.scheduler) {
-      clearTimeout(this.state.scheduler);
+      clearInterval(this.state.scheduler);
       this.setState({chord: 'C', scheduler: null, lastChord: null, currentTime: 0});
     } else {
-      this.setState({scheduler: setTimeout(this.scheduler, 0)});
+      this.setState({scheduler: setInterval(this.scheduler, 1000)});
     }
   }
 
@@ -57,6 +58,7 @@ class App extends Component {
         <div className="App-header">
           <h2>Fretboard Workout</h2>
         </div>
+        <Timer duration={this.state.duration} currentTime={this.state.currentTime}/>
         <Chord chord={this.state.chord} />
         <div className="App-footer">
           <Controller toggle={this.toggle} changeDuration={this.changeDuration}/>
