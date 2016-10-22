@@ -13,6 +13,7 @@ class App extends Component {
     this.getRandomInt = this.getRandomInt.bind(this);
     this.toggle = this.toggle.bind(this);
     this.scheduler = this.scheduler.bind(this);
+    this.changeDuration = this.changeDuration.bind(this);
   }
 
   getRandomInt(min, max) {
@@ -20,8 +21,7 @@ class App extends Component {
   }
 
   changeDuration(time) {
-    clearInterval(this.state.start);
-    this.setState({duration: time, scheduler: null});
+    this.setState({duration: time});
   }
 
   scheduler() {
@@ -59,7 +59,7 @@ class App extends Component {
         </div>
         <Chord chord={this.state.chord} />
         <div className="App-footer">
-          <Controller toggle={this.toggle}/>
+          <Controller toggle={this.toggle} changeDuration={this.changeDuration}/>
         </div>
       </div>
     );

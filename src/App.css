@@ -19,7 +19,7 @@
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: #222;
+  /*background-color: #222;*/
   height: 50px;
   padding: 20px;
   color: white;
@@ -33,3 +33,4 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+

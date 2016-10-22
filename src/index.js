@@ -11,9 +11,9 @@ const Main = () => (
   </MuiThemeProvider>
 );
 
+injectTapEventPlugin();
+
 ReactDOM.render(
   <Main />,
   document.getElementById('root')
 );
-
-injectTapEventPlugin();
