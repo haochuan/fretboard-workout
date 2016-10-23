@@ -11,7 +11,7 @@ const styles = {
     color: '#000'
   },
   dropdown: {
-    width: 200
+    width: 100
   }
 };
 
@@ -32,10 +32,10 @@ class Controller extends Component {
     return (
       <div className="App-controller App-row">
         <div className="row">
-            <div className="col-xs-6
-                        col-sm-6
-                        col-md-6
-                        col-lg-6">
+            <div className="col-xs-4
+                        col-sm-4
+                        col-md-4
+                        col-lg-4">
                 <DropDownMenu
                   value={this.state.duration}
                   onChange={this.durationHandler}
@@ -49,10 +49,21 @@ class Controller extends Component {
                   <MenuItem value={5} primaryText="5" />
                 </DropDownMenu>
             </div>
-            <div className="col-xs-6
-                        col-sm-6
-                        col-md-6
-                        col-lg-6">
+            <div className="col-xs-4
+                        col-sm-4
+                        col-md-4
+                        col-lg-4">
+              <Toggle
+                label="Sequence"
+                style={styles.toggle}
+                labelStyle={styles.label}
+                onToggle={this.props.sequenceToggle}
+              />
+            </div>
+            <div className="col-xs-4
+                        col-sm-4
+                        col-md-4
+                        col-lg-4">
               <Toggle
                 label="On/Off"
                 style={styles.toggle}
