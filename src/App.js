@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Timer from './components/Timer';
+import Instruction from './components/Instruction';
 import Chord from './components/Chord';
 import Controller from './components/Controller';
 
@@ -86,6 +87,7 @@ class App extends Component {
         </div>
         <Timer duration={this.state.duration} currentTime={this.state.currentTime}/>
         <Chord chord={this.state.chord} />
+        <Instruction />
         <div className="App-footer">
           <Controller 
             toggle={this.toggle} 
