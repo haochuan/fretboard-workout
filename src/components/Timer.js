@@ -4,7 +4,7 @@ import LinearProgress from 'material-ui/LinearProgress';
 class Timer extends Component {
   render() {
     const {duration, currentTime} = this.props;
-    const progress = Math.floor(((currentTime + 1) / duration) * 100);
+    const progress = Math.floor(((currentTime) / (duration - 1)) * 100);
     // console.log('progress: ', progress);
     return (
       <div className="App-timer">
