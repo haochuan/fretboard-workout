@@ -8,6 +8,10 @@ const styles = {
   toggle: {
     top: 18,
   },
+  block: {
+    maxWidth: 250,
+    marginLeft: 22
+  },
   label: {
     color: '#000'
   },
@@ -50,22 +54,26 @@ class Controller extends Component {
           <br />
 
           <div className="row">
-            <Toggle
-              label="Sequence"
-              style={styles.toggle}
-              labelStyle={styles.label}
-              onToggle={this.props.sequenceToggle}
-            />
+            <div style={styles.block}>
+              <Toggle
+                label="Sequence"
+                style={styles.toggle}
+                labelStyle={styles.label}
+                onToggle={this.props.sequenceToggle}
+              />
+            </div>
           </div>
           <br />
 
           <div className="row">
-            <Toggle
-              label="On/Off"
-              style={styles.toggle}
-              labelStyle={styles.label}
-              onToggle={this.props.toggle}
-            />
+            <div style={styles.block}>
+              <Toggle
+                label="On/Off"
+                style={styles.toggle}
+                labelStyle={styles.label}
+                onToggle={this.props.toggle}
+              />
+            </div>
           </div>
           <br />
         </Drawer>

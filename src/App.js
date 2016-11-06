@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Grid, Row, Col} from 'react-flexbox-grid';
 import './App.css';
 import Timer from './components/Timer';
 import Instruction from './components/Instruction';
@@ -82,31 +81,35 @@ class App extends Component {
 
   render() {
     return (
-      <Grid>
-        <Row>
-          <Col xs={4} sm={4} md={4} lg={4}>
-            <Controller 
-              toggle={this.toggle} 
-              changeDuration={this.changeDuration}
-              sequenceToggle={this.sequenceToggle}
-            />
-          </Col>
+      <div className="row">
+        <div className="col-xs-2
+                    col-sm-2
+                    col-md-2
+                    col-lg-2">
+          <Controller 
+            toggle={this.toggle} 
+            changeDuration={this.changeDuration}
+            sequenceToggle={this.sequenceToggle}
+          />
+        </div>
 
-          <Col xs={8} sm={8} md={8} lg={8} xsOffset={4} smOffset={4} mdOffset={4} lgOffset={4}>
-            <div className="App">
-              <div className="App-header">
-                <h2>Fretboard Workout</h2>
-              </div>
-              <Timer duration={this.state.duration} currentTime={this.state.currentTime}/>
-              <Chord chord={this.state.chord} />
-              <Instruction />
-              <div className="App-footer">
-
-              </div>
+        <div className="col-xs-10
+                    col-sm-10
+                    col-md-10
+                    col-lg-10">
+          <div className="App">
+            <div className="App-header">
+              <h2>Fretboard Workout</h2>
             </div>
-          </Col>
-        </Row>
-      </Grid>
+            <Timer duration={this.state.duration} currentTime={this.state.currentTime}/>
+            <Chord chord={this.state.chord} />
+            <Instruction />
+            <div className="App-footer">
+
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 }
