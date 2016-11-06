@@ -7,9 +7,12 @@
     "react-scripts": "0.6.1"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
+    "flexboxgrid": "^6.3.1",
     "material-ui": "^0.16.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-flexbox-grid": "^0.10.2",
     "react-tap-event-plugin": "^1.0.0"
   },
   "homepage": "http://haochuan.github.io/fretboard-workout",

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Toggle from 'material-ui/Toggle';
 import DropDownMenu from 'material-ui/DropDownMenu';
+import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 
 const styles = {
@@ -11,7 +12,7 @@ const styles = {
     color: '#000'
   },
   dropdown: {
-    width: 100
+    width: 200
   }
 };
 
@@ -30,48 +31,44 @@ class Controller extends Component {
   
   render() {
     return (
-      <div className="App-controller App-row">
-        <div className="row">
-            <div className="col-xs-4
-                        col-sm-4
-                        col-md-4
-                        col-lg-4">
-                <DropDownMenu
-                  value={this.state.duration}
-                  onChange={this.durationHandler}
-                  style={styles.dropdown}
-                  autoWidth={false}
-                >
-                  <MenuItem value={1} primaryText="1" />
-                  <MenuItem value={2} primaryText="2" />
-                  <MenuItem value={3} primaryText="3" />
-                  <MenuItem value={4} primaryText="4" />
-                  <MenuItem value={5} primaryText="5" />
-                </DropDownMenu>
-            </div>
-            <div className="col-xs-4
-                        col-sm-4
-                        col-md-4
-                        col-lg-4">
-              <Toggle
-                label="Sequence"
-                style={styles.toggle}
-                labelStyle={styles.label}
-                onToggle={this.props.sequenceToggle}
-              />
-            </div>
-            <div className="col-xs-4
-                        col-sm-4
-                        col-md-4
-                        col-lg-4">
-              <Toggle
-                label="On/Off"
-                style={styles.toggle}
-                labelStyle={styles.label}
-                onToggle={this.props.toggle}
-              />
-            </div>
-        </div>
+      <div>
+        <Drawer open={true}>
+          <div className="row">
+            <DropDownMenu
+              value={this.state.duration}
+              onChange={this.durationHandler}
+              style={styles.dropdown}
+              autoWidth={false}
+            >
+              <MenuItem value={1} primaryText="1" />
+              <MenuItem value={2} primaryText="2" />
+              <MenuItem value={3} primaryText="3" />
+              <MenuItem value={4} primaryText="4" />
+              <MenuItem value={5} primaryText="5" />
+            </DropDownMenu>
+          </div>
+          <br />
+
+          <div className="row">
+            <Toggle
+              label="Sequence"
+              style={styles.toggle}
+              labelStyle={styles.label}
+              onToggle={this.props.sequenceToggle}
+            />
+          </div>
+          <br />
+
+          <div className="row">
+            <Toggle
+              label="On/Off"
+              style={styles.toggle}
+              labelStyle={styles.label}
+              onToggle={this.props.toggle}
+            />
+          </div>
+          <br />
+        </Drawer>
       </div>
     );
   }
